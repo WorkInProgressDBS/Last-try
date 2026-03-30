@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature 1 – Income & Savings | Finance Done The Right Way</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .chart-section {
+            margin-bottom: 40px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .bar-fill-income  { background-color: #2e8fa5; }
+        .bar-fill-savings { background-color: #f4a261; }
+        .bar-fill-debt    { background-color: #e76f51; }
+
+        .year-label {
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: bold;
+            color: #1a4fa3;
+            width: 50px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-logo" style="font-size: 2.8rem;">🐝</div>
+        <div class="header-text">
+            <div class="header-title">Finance Done The Right Way</div>
+            <div class="header-subtitle">Gotham &nbsp;|&nbsp; BY DAVID SMITH</div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="feature1.html" class="nav-btn active">Feature Page</a>
+        <a href="contact.html" class="nav-btn">Contact Us</a>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- Feature sub-navigation -->
+        <div class="feature-nav">
+            <a href="feature1.html" class="active">Feature 1 – Income & Savings</a>
+            <a href="feature2.html">Feature 2 – Budget Calculator</a>
+            <a href="feature3.html">Feature 3 – Financial News</a>
+        </div>
+
+        <h2 class="section-title">Feature 1: Monthly Income, Savings & Debt Breakdown</h2>
+        <p style="font-family: Arial, sans-serif; font-size: 0.93rem; color: #444; margin-bottom: 28px;">
+            This chart visualizes your monthly income sources, savings allocation, and debt breakdown
+            across three years. Use this to track how your financial picture changes over time.
+        </p>
+
+        <!-- LEGEND -->
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-dot bar-fill-income"></span> Monthly Income
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot bar-fill-savings"></span> Savings
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot bar-fill-debt"></span> Debt Payments
+            </div>
+        </div>
+
+        <!-- CSS BAR CHART – Income Sources -->
+        <div class="chart-section">
+            <h3 style="font-family:Arial,sans-serif; font-size:1rem; margin-bottom:14px; color:#333;">Income vs. Savings vs. Debt (2020–2022)</h3>
+
+            <!-- 2020 -->
+            <div class="bar-row">
+                <span class="year-label">2020</span>
+                <span class="bar-label">Income</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-income" style="width: 72%;"></div></div>
+                <span class="bar-value">$36,000</span>
+            </div>
+            <div class="bar-row">
+                <span class="year-label"></span>
+                <span class="bar-label">Savings</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-savings" style="width: 48%;"></div></div>
+                <span class="bar-value">$24,000</span>
+            </div>
+            <div class="bar-row">
+                <span class="year-label"></span>
+                <span class="bar-label">Debt</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-debt" style="width: 21%;"></div></div>
+                <span class="bar-value">$10,500</span>
+            </div>
+
+            <!-- Divider -->
+            <div style="margin: 10px 0; border-top: 1px dashed #ccc;"></div>
+
+            <!-- 2021 -->
+            <div class="bar-row">
+                <span class="year-label">2021</span>
+                <span class="bar-label">Income</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-income" style="width: 80%;"></div></div>
+                <span class="bar-value">$40,000</span>
+            </div>
+            <div class="bar-row">
+                <span class="year-label"></span>
+                <span class="bar-label">Savings</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-savings" style="width: 55%;"></div></div>
+                <span class="bar-value">$27,500</span>
+            </div>
+            <div class="bar-row">
+                <span class="year-label"></span>
+                <span class="bar-label">Debt</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-debt" style="width: 18%;"></div></div>
+                <span class="bar-value">$9,000</span>
+            </div>
+
+            <div style="margin: 10px 0; border-top: 1px dashed #ccc;"></div>
+
+            <!-- 2022 -->
+            <div class="bar-row">
+                <span class="year-label">2022</span>
+                <span class="bar-label">Income</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-income" style="width: 90%;"></div></div>
+                <span class="bar-value">$45,000</span>
+            </div>
+            <div class="bar-row">
+                <span class="year-label"></span>
+                <span class="bar-label">Savings</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-savings" style="width: 62%;"></div></div>
+                <span class="bar-value">$31,000</span>
+            </div>
+            <div class="bar-row">
+                <span class="year-label"></span>
+                <span class="bar-label">Debt</span>
+                <div class="bar-track"><div class="bar-fill bar-fill-debt" style="width: 14%;"></div></div>
+                <span class="bar-value">$7,000</span>
+            </div>
+        </div>
+
+        <!-- DATA TABLE BELOW -->
+        <h3 style="font-family:Arial,sans-serif; font-size:1rem; margin-bottom:10px; color:#333;">Full Breakdown Table</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>2020</th>
+                    <th>2021</th>
+                    <th>2022</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Salary</td><td>$30,000</td><td>$34,000</td><td>$38,000</td></tr>
+                <tr><td>Freelance</td><td>$4,000</td><td>$4,500</td><td>$5,000</td></tr>
+                <tr><td>Other Income</td><td>$2,000</td><td>$1,500</td><td>$2,000</td></tr>
+                <tr><td><strong>Total Income</strong></td><td><strong>$36,000</strong></td><td><strong>$40,000</strong></td><td><strong>$45,000</strong></td></tr>
+                <tr><td>Roth IRA</td><td>$6,000</td><td>$6,500</td><td>$7,000</td></tr>
+                <tr><td>Emergency Fund</td><td>$5,000</td><td>$6,000</td><td>$7,500</td></tr>
+                <tr><td>Italy Trip Fund</td><td>$3,000</td><td>$3,500</td><td>$4,000</td></tr>
+                <tr><td><strong>Total Savings</strong></td><td><strong>$24,000</strong></td><td><strong>$27,500</strong></td><td><strong>$31,000</strong></td></tr>
+                <tr><td>Car Note</td><td>$4,800</td><td>$4,800</td><td>$4,200</td></tr>
+                <tr><td>Student Loans</td><td>$3,600</td><td>$2,400</td><td>$1,800</td></tr>
+                <tr><td>Credit Card</td><td>$2,100</td><td>$1,800</td><td>$1,000</td></tr>
+                <tr><td><strong>Total Debt</strong></td><td><strong>$10,500</strong></td><td><strong>$9,000</strong></td><td><strong>$7,000</strong></td></tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <div class="footer-brand-icon">🐝</div>
+            <div class="footer-social"><span>𝕏</span><span>📸</span><span>▶</span><span>in</span></div>
+        </div>
+        <div class="footer-col">
+            <h4>Our Team</h4>
+            <ul><li>Aria Bennett</li><li>Mateo Alvarez</li><li>Jasper Cole</li><li>Miles Donovan</li><li>Rowan Mitchell</li><li>Ethan Brooks</li><li>Julian Park</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul><li>Design</li><li>Prototyping</li><li>Development features</li><li>Design systems</li><li>Collaboration features</li><li>Design process</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul><li>Blog</li><li>Best practices</li><li>Colors</li><li>Color wheel</li><li>Support</li><li>Developers</li><li>Resource library</li></ul>
+        </div>
+        <a href="contact.html" class="footer-contact-btn">CONTACT</a>
+    </footer>
+
+</div>
+</body>
+</html>

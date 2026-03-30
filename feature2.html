@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature 2 – Budget Calculator | Finance Done The Right Way</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .budget-form {
+            max-width: 560px;
+        }
+
+        .budget-form .form-group input {
+            background-color: #fafcff;
+        }
+
+        .spending-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 30px;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #cdd8e0;
+            font-family: Arial, sans-serif;
+            font-size: 0.93rem;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            color: #1a4fa3;
+            font-size: 1rem;
+            padding-top: 10px;
+        }
+
+        .surplus   { color: #2d8a4e; font-weight: bold; }
+        .deficit   { color: #c0392b; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-logo" style="font-size: 2.8rem;">🐝</div>
+        <div class="header-text">
+            <div class="header-title">Finance Done The Right Way</div>
+            <div class="header-subtitle">Gotham &nbsp;|&nbsp; BY DAVID SMITH</div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="feature1.html" class="nav-btn active">Feature Page</a>
+        <a href="contact.html" class="nav-btn">Contact Us</a>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <div class="feature-nav">
+            <a href="feature1.html">Feature 1 – Income & Savings</a>
+            <a href="feature2.html" class="active">Feature 2 – Budget Calculator</a>
+            <a href="feature3.html">Feature 3 – Financial News</a>
+        </div>
+
+        <h2 class="section-title">Feature 2: Monthly Income & Spending Calculator</h2>
+        <p style="font-family: Arial, sans-serif; font-size: 0.93rem; color: #444; margin-bottom: 24px;">
+            Enter your monthly income and spending amounts below. Click <strong>Calculate</strong> to see your budget breakdown and remaining balance.
+        </p>
+
+        <!-- BUDGET FORM -->
+        <div class="budget-form">
+            <div class="form-group">
+                <label for="income">Monthly Income ($)</label>
+                <input type="number" id="income" placeholder="e.g. 4000" min="0">
+            </div>
+
+            <p style="font-family:Arial,sans-serif; font-weight:bold; font-size:0.92rem; color:#333; margin-bottom:12px;">Monthly Spending by Category:</p>
+
+            <div class="spending-grid">
+                <div class="form-group">
+                    <label for="rent">Rent / Mortgage ($)</label>
+                    <input type="number" id="rent" placeholder="e.g. 1200" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="food">Food / Groceries ($)</label>
+                    <input type="number" id="food" placeholder="e.g. 400" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="car">Car / Transportation ($)</label>
+                    <input type="number" id="car" placeholder="e.g. 350" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="savings">Savings ($)</label>
+                    <input type="number" id="savings" placeholder="e.g. 500" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="fun">Fun / Entertainment ($)</label>
+                    <input type="number" id="fun" placeholder="e.g. 200" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="misc">Miscellaneous ($)</label>
+                    <input type="number" id="misc" placeholder="e.g. 150" min="0">
+                </div>
+            </div>
+
+            <!-- INLINE CSS on button for extra emphasis -->
+            <button class="btn-primary" onclick="calculateBudget()" style="margin-top: 8px; width: 100%; font-size: 1.05rem;">
+                Calculate My Budget
+            </button>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="result-box" id="results" style="display: none; max-width: 560px;">
+            <h3>Your Monthly Budget Summary</h3>
+            <div class="result-row"><span>Monthly Income:</span>       <span id="r-income">$0</span></div>
+            <div class="result-row"><span>Rent / Mortgage:</span>      <span id="r-rent">$0</span></div>
+            <div class="result-row"><span>Food / Groceries:</span>     <span id="r-food">$0</span></div>
+            <div class="result-row"><span>Car / Transportation:</span> <span id="r-car">$0</span></div>
+            <div class="result-row"><span>Savings:</span>              <span id="r-savings">$0</span></div>
+            <div class="result-row"><span>Fun / Entertainment:</span>  <span id="r-fun">$0</span></div>
+            <div class="result-row"><span>Miscellaneous:</span>        <span id="r-misc">$0</span></div>
+            <div class="result-row"><span>Total Spending:</span>       <span id="r-total">$0</span></div>
+            <div class="result-row">
+                <span>Remaining Balance:</span>
+                <span id="r-remaining">$0</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <div class="footer-brand-icon">🐝</div>
+            <div class="footer-social"><span>𝕏</span><span>📸</span><span>▶</span><span>in</span></div>
+        </div>
+        <div class="footer-col">
+            <h4>Our Team</h4>
+            <ul><li>Aria Bennett</li><li>Mateo Alvarez</li><li>Jasper Cole</li><li>Miles Donovan</li><li>Rowan Mitchell</li><li>Ethan Brooks</li><li>Julian Park</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul><li>Design</li><li>Prototyping</li><li>Development features</li><li>Design systems</li><li>Collaboration features</li><li>Design process</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul><li>Blog</li><li>Best practices</li><li>Colors</li><li>Color wheel</li><li>Support</li><li>Developers</li><li>Resource library</li></ul>
+        </div>
+        <a href="contact.html" class="footer-contact-btn">CONTACT</a>
+    </footer>
+
+</div>
+
+<!-- SIMPLE JAVASCRIPT -->
+<script>
+    function calculateBudget() {
+        // Get values from inputs (default to 0 if empty)
+        var income   = parseFloat(document.getElementById('income').value)  || 0;
+        var rent     = parseFloat(document.getElementById('rent').value)    || 0;
+        var food     = parseFloat(document.getElementById('food').value)    || 0;
+        var car      = parseFloat(document.getElementById('car').value)     || 0;
+        var savings  = parseFloat(document.getElementById('savings').value) || 0;
+        var fun      = parseFloat(document.getElementById('fun').value)     || 0;
+        var misc     = parseFloat(document.getElementById('misc').value)    || 0;
+
+        // Add up spending
+        var total     = rent + food + car + savings + fun + misc;
+        var remaining = income - total;
+
+        // Format as currency
+        function fmt(n) {
+            return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Fill in results
+        document.getElementById('r-income').textContent    = fmt(income);
+        document.getElementById('r-rent').textContent      = fmt(rent);
+        document.getElementById('r-food').textContent      = fmt(food);
+        document.getElementById('r-car').textContent       = fmt(car);
+        document.getElementById('r-savings').textContent   = fmt(savings);
+        document.getElementById('r-fun').textContent       = fmt(fun);
+        document.getElementById('r-misc').textContent      = fmt(misc);
+        document.getElementById('r-total').textContent     = fmt(total);
+
+        var remEl = document.getElementById('r-remaining');
+        remEl.textContent = fmt(remaining);
+        remEl.className = remaining >= 0 ? 'surplus' : 'deficit';
+
+        // Show the results box
+        document.getElementById('results').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

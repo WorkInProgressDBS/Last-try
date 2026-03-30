@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Done The Right Way</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- INTERNAL CSS (page-specific) -->
+    <style>
+        .hero-banner {
+            text-align: center;
+            padding: 20px 40px 30px;
+        }
+
+        .hero-box {
+            display: inline-block;
+            border: 4px solid #111;
+            padding: 24px 60px;
+            font-family: Arial, sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #111;
+            position: relative;
+        }
+
+        .hero-box::before,
+        .hero-box::after {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #111;
+        }
+
+        .hero-box::before {
+            left: -40px;
+            content: "◀";
+        }
+
+        .hero-box::after {
+            right: -40px;
+        }
+
+        .hero-box p {
+            margin: 0;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <!-- INLINE CSS on logo -->
+        <div class="header-logo" style="color: #111; font-size: 2.8rem;">🐝</div>
+        <div class="header-text">
+            <div class="header-title">Finance Done The Right Way</div>
+            <div class="header-subtitle">Gotham &nbsp;|&nbsp; BY DAVID SMITH</div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-btn active">Home</a>
+        <a href="feature1.html" class="nav-btn">Feature Page</a>
+        <a href="contact.html" class="nav-btn">Contact Us</a>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+        <div class="hero-box">
+            <p>We Are Always</p>
+            <p>Happy To Serve You</p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-content">
+        <div class="two-col">
+            <div class="col">
+                <h2>Company Ethics</h2>
+                <p>
+                    We believe managing someone's wealth is both a privilege and a responsibility.
+                    We operate with integrity, transparency, and accountability in every decision,
+                    always putting our clients' best interests first. As fiduciaries, we provide
+                    clear guidance, fully disclose fees and risks, and avoid conflicts of interest.
+                    We prioritize disciplined risk management and strong data protection to safeguard
+                    both financial assets and personal information. Through ethical leadership and
+                    responsible stewardship, we are committed to protecting and growing the wealth
+                    entrusted to us.
+                </p>
+            </div>
+            <div class="col">
+                <h2>Call to Action</h2>
+                <p>
+                    Our app makes managing your money simple today while helping you plan for
+                    tomorrow. Start by easily tracking income, monitoring expenses, and visualizing
+                    your spending with clear, intuitive charts. As you build confidence, the app
+                    grows with you — introducing savings goals, smart insights, and retirement
+                    planning tools. From budgeting basics to long-term wealth building, we're here
+                    to support every step of your financial journey.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPACER -->
+    <div style="height: 60px;"></div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <div class="footer-brand-icon">🐝</div>
+            <div class="footer-social">
+                <span>𝕏</span>
+                <span>📸</span>
+                <span>▶</span>
+                <span>in</span>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Our Team</h4>
+            <ul>
+                <li>Aria Bennett</li>
+                <li>Mateo Alvarez</li>
+                <li>Jasper Cole</li>
+                <li>Miles Donovan</li>
+                <li>Rowan Mitchell</li>
+                <li>Ethan Brooks</li>
+                <li>Julian Park</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+                <li>Design</li>
+                <li>Prototyping</li>
+                <li>Development features</li>
+                <li>Design systems</li>
+                <li>Collaboration features</li>
+                <li>Design process</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li>Blog</li>
+                <li>Best practices</li>
+                <li>Colors</li>
+                <li>Color wheel</li>
+                <li>Support</li>
+                <li>Developers</li>
+                <li>Resource library</li>
+            </ul>
+        </div>
+        <a href="contact.html" class="footer-contact-btn">CONTACT</a>
+    </footer>
+
+</div>
+</body>
+</html>

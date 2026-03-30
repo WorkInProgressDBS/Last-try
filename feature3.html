@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature 3 – Financial News | Finance Done The Right Way</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .news-section {
+            margin-bottom: 36px;
+        }
+
+        .topic-heading {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            background-color: #1a4fa3;
+            padding: 8px 16px;
+            margin-bottom: 0;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .news-list {
+            border: 1px solid #c5d8e8;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            padding: 0 16px;
+        }
+
+        .news-source {
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        .two-col-news {
+            display: flex;
+            gap: 40px;
+        }
+
+        .two-col-news .news-section {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-logo" style="font-size: 2.8rem;">🐝</div>
+        <div class="header-text">
+            <div class="header-title">Finance Done The Right Way</div>
+            <div class="header-subtitle">Gotham &nbsp;|&nbsp; BY DAVID SMITH</div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="feature1.html" class="nav-btn active">Feature Page</a>
+        <a href="contact.html" class="nav-btn">Contact Us</a>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <div class="feature-nav">
+            <a href="feature1.html">Feature 1 – Income & Savings</a>
+            <a href="feature2.html">Feature 2 – Budget Calculator</a>
+            <a href="feature3.html" class="active">Feature 3 – Financial News</a>
+        </div>
+
+        <h2 class="section-title">Feature 3: Financial News Relevant to You</h2>
+        <p style="font-family: Arial, sans-serif; font-size: 0.93rem; color: #444; margin-bottom: 28px;">
+            Stay informed with the latest headlines on interest rates, housing prices, wages, and market trends.
+            These stories are selected to help you make better financial decisions.
+        </p>
+
+        <!-- Two columns of news topics -->
+        <div class="two-col-news">
+
+            <!-- LEFT COLUMN -->
+            <div>
+                <!-- RATES -->
+                <div class="news-section">
+                    <div class="topic-heading">📉 Interest Rates</div>
+                    <ul class="news-list">
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">Fed Holds Rates Steady for Third Straight Meeting</div>
+                            <div class="news-desc">The Federal Reserve voted to keep benchmark interest rates unchanged, citing mixed signals on inflation and employment.</div>
+                            <div class="news-source">Source: Reuters &nbsp;|&nbsp; March 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">Mortgage Rates Dip Below 6.5% for First Time in a Year</div>
+                            <div class="news-desc">Home loan rates have eased slightly, offering some relief to buyers who have been priced out of the market.</div>
+                            <div class="news-source">Source: CNBC &nbsp;|&nbsp; February 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0;">
+                            <div class="news-headline">High-Yield Savings Accounts Still Paying Over 4%</div>
+                            <div class="news-desc">Online banks continue to offer competitive savings rates, making it a great time to grow your emergency fund.</div>
+                            <div class="news-source">Source: Bankrate &nbsp;|&nbsp; March 2026</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WAGES -->
+                <div class="news-section">
+                    <div class="topic-heading">💼 Wages & Employment</div>
+                    <ul class="news-list">
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">Minimum Wage Increases Take Effect in 12 States</div>
+                            <div class="news-desc">Several states raised their minimum wages at the start of the year, with some now exceeding $16 per hour.</div>
+                            <div class="news-source">Source: AP News &nbsp;|&nbsp; January 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">Tech Sector Sees Wage Growth Slow After Years of Gains</div>
+                            <div class="news-desc">Technology workers are seeing smaller salary increases compared to the boom years of 2021–2023.</div>
+                            <div class="news-source">Source: Bloomberg &nbsp;|&nbsp; February 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0;">
+                            <div class="news-headline">Job Market Remains Strong — Unemployment Stays at 3.9%</div>
+                            <div class="news-desc">The labor market continues to show resilience, with steady hiring in healthcare, construction, and retail.</div>
+                            <div class="news-source">Source: Bureau of Labor Statistics &nbsp;|&nbsp; March 2026</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div>
+                <!-- HOUSING -->
+                <div class="news-section">
+                    <div class="topic-heading">🏠 Housing Prices</div>
+                    <ul class="news-list">
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">Home Prices Rose 4.2% Year-Over-Year in Most Major Cities</div>
+                            <div class="news-desc">Despite cooling demand, limited housing inventory is keeping prices elevated in most metro areas across the country.</div>
+                            <div class="news-source">Source: Zillow &nbsp;|&nbsp; March 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">Rental Prices Begin to Level Off in Southern Cities</div>
+                            <div class="news-desc">Cities like Austin and Nashville are seeing rent stabilization after several years of rapid increases.</div>
+                            <div class="news-source">Source: Wall Street Journal &nbsp;|&nbsp; February 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0;">
+                            <div class="news-headline">First-Time Homebuyer Programs Expand in 8 New States</div>
+                            <div class="news-desc">Down payment assistance programs and tax credits are now available to more buyers than ever before.</div>
+                            <div class="news-source">Source: HUD &nbsp;|&nbsp; January 2026</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- MARKETS -->
+                <div class="news-section">
+                    <div class="topic-heading">📈 Stock Market</div>
+                    <ul class="news-list">
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">S&P 500 Closes at Record High on Strong Earnings Reports</div>
+                            <div class="news-desc">Major index hits a new all-time high as retail and energy companies report better-than-expected quarterly profits.</div>
+                            <div class="news-source">Source: MarketWatch &nbsp;|&nbsp; March 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0; border-bottom: 1px solid #ddd;">
+                            <div class="news-headline">401(k) Contribution Limits Raised for 2026</div>
+                            <div class="news-desc">The IRS increased the annual 401(k) contribution limit to $24,500, giving workers more room to save for retirement.</div>
+                            <div class="news-source">Source: IRS.gov &nbsp;|&nbsp; January 2026</div>
+                        </li>
+                        <li class="news-list" style="list-style:none; padding: 12px 0;">
+                            <div class="news-headline">Index Funds Continue to Outperform Actively Managed Funds</div>
+                            <div class="news-desc">Data shows low-cost index funds remain the top performer for long-term retail investors over any 10-year period.</div>
+                            <div class="news-source">Source: Morningstar &nbsp;|&nbsp; February 2026</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <div class="footer-brand-icon">🐝</div>
+            <div class="footer-social"><span>𝕏</span><span>📸</span><span>▶</span><span>in</span></div>
+        </div>
+        <div class="footer-col">
+            <h4>Our Team</h4>
+            <ul><li>Aria Bennett</li><li>Mateo Alvarez</li><li>Jasper Cole</li><li>Miles Donovan</li><li>Rowan Mitchell</li><li>Ethan Brooks</li><li>Julian Park</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul><li>Design</li><li>Prototyping</li><li>Development features</li><li>Design systems</li><li>Collaboration features</li><li>Design process</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul><li>Blog</li><li>Best practices</li><li>Colors</li><li>Color wheel</li><li>Support</li><li>Developers</li><li>Resource library</li></ul>
+        </div>
+        <a href="contact.html" class="footer-contact-btn">CONTACT</a>
+    </footer>
+
+</div>
+</body>
+</html>

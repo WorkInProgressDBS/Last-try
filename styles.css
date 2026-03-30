@@ -1,0 +1,692 @@
+/* ================================
+   EXTERNAL CSS - styles.css
+   Finance Done The Right Way
+================================ */
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #ffffff;
+    color: #222222;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Page Border Wrapper --- */
+.page-wrapper {
+    border: 3px solid #1a4fa3;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: clip;
+}
+
+/* --- Header --- */
+.site-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 40px 12px 40px;
+    border-bottom: 3px solid #003087;
+    gap: 16px;
+}
+
+.header-logo {
+    font-size: 2.5rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.header-text {
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+}
+
+.header-title {
+    font-family: Arial, sans-serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111;
+    line-height: 1.2;
+}
+
+.header-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1a4fa3;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+/* --- Navigation --- */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px 24px;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background-color: #2e8fa5;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 1.05rem;
+    padding: 14px 28px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    min-height: 48px;
+    min-width: 140px;
+    text-align: center;
+}
+
+.nav-btn:hover {
+    background-color: #1f6e80;
+}
+
+.nav-btn.active {
+    background-color: #1a4fa3;
+}
+
+/* --- Page Content Area --- */
+.page-content {
+    padding: 30px 60px 40px 60px;
+}
+
+/* --- Two Column Layout --- */
+.two-col {
+    display: flex;
+    gap: 50px;
+}
+
+.col {
+    flex: 1;
+    min-width: 0;
+}
+
+.col h2 {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.col p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* --- Section Headings --- */
+.section-title {
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #1a4fa3;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #2e8fa5;
+    padding-bottom: 6px;
+}
+
+/* --- Tables (Low-Tech Charts) --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    table-layout: fixed;
+}
+
+.data-table th {
+    background-color: #2e8fa5;
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    word-break: break-word;
+}
+
+.data-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #ddd;
+    word-break: break-word;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f0f7fa;
+}
+
+.data-table tr:hover {
+    background-color: #dceef4;
+}
+
+/* --- Forms --- */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    max-width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #1a4fa3;
+}
+
+.form-group textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: #1a4fa3;
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #153d82;
+}
+
+.btn-teal {
+    background-color: #2e8fa5;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-teal:hover {
+    background-color: #1f6e80;
+}
+
+/* --- Result Box --- */
+.result-box {
+    background-color: #eef5fb;
+    border: 1px solid #b0cce0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.result-box h3 {
+    font-size: 1rem;
+    color: #1a4fa3;
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* --- News Cards --- */
+.news-list {
+    list-style: none;
+}
+
+.news-list li {
+    border-bottom: 1px solid #ddd;
+    padding: 14px 0;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-category {
+    display: inline-block;
+    background-color: #2e8fa5;
+    color: #fff;
+    font-size: 0.75rem;
+    font-family: Arial, sans-serif;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.news-headline {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.news-desc {
+    font-size: 0.88rem;
+    color: #555;
+}
+
+/* --- Contact Info --- */
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.contact-icon {
+    font-size: 1.3rem;
+    color: #c8792a;
+    margin-top: 2px;
+    min-width: 24px;
+    flex-shrink: 0;
+}
+
+/* --- Footer --- */
+.site-footer {
+    border-top: 1px solid #ddd;
+    padding: 28px 60px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    min-width: 70px;
+}
+
+.footer-brand-icon {
+    font-size: 1.6rem;
+    color: #444;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #444;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    min-width: 130px;
+}
+
+.footer-col h4 {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.footer-contact-btn {
+    margin-left: auto;
+    align-self: center;
+    background-color: #1a4fa3;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    display: inline-block;
+    min-height: 48px;
+    line-height: 1.2;
+}
+
+.footer-contact-btn:hover {
+    background-color: #153d82;
+}
+
+/* --- Feature Nav (sub-nav for feature pages) --- */
+.feature-nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.feature-nav a {
+    background-color: #eef5fb;
+    border: 2px solid #2e8fa5;
+    color: #1a4fa3;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    border-radius: 10px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.feature-nav a:hover,
+.feature-nav a.active {
+    background-color: #2e8fa5;
+    color: #fff;
+}
+
+/* --- Bar visual (CSS only, no JS chart) --- */
+.bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 0.88rem;
+}
+
+.bar-label {
+    width: 130px;
+    text-align: right;
+    color: #444;
+    flex-shrink: 0;
+}
+
+.bar-track {
+    flex: 1;
+    background-color: #e8e8e8;
+    border-radius: 4px;
+    height: 22px;
+    min-width: 0;
+}
+
+.bar-fill {
+    height: 22px;
+    border-radius: 4px;
+    background-color: #2e8fa5;
+}
+
+.bar-value {
+    width: 70px;
+    color: #333;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
+    .page-content,
+    .site-footer,
+    .site-header {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .two-col,
+    .two-col-news,
+    .contact-layout {
+        gap: 28px;
+    }
+
+    .main-nav {
+        gap: 16px;
+    }
+
+    .nav-btn {
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 18px;
+        padding-bottom: 16px;
+    }
+
+    .header-logo {
+        margin-right: 0;
+    }
+
+    .header-text {
+        width: 100%;
+    }
+
+    .header-title {
+        font-size: 1.45rem;
+        letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 20px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 16px;
+    }
+
+    .page-content {
+        padding: 22px 20px 30px;
+    }
+
+    .two-col,
+    .two-col-news,
+    .contact-layout,
+    .spending-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .feature-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .feature-nav a {
+        width: 100%;
+    }
+
+    .hero-banner {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .hero-box {
+        display: block !important;
+        width: 100% !important;
+        padding: 20px 16px !important;
+        font-size: 1.1rem !important;
+        letter-spacing: 1px;
+    }
+
+    .hero-box::before,
+    .hero-box::after {
+        display: none !important;
+    }
+
+    .section-title {
+        font-size: 1.15rem;
+    }
+
+    .col h2,
+    .contact-heading {
+        font-size: 1.1rem;
+    }
+
+    .contact-desc,
+    .col p,
+    .news-desc {
+        font-size: 0.95rem;
+    }
+
+    .data-table {
+        font-size: 0.82rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 8px 10px;
+    }
+
+    .bar-row {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .year-label,
+    .bar-label,
+    .bar-value {
+        width: auto;
+        text-align: left;
+    }
+
+    .year-label {
+        min-width: 48px;
+    }
+
+    .bar-track {
+        order: 3;
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .bar-value {
+        min-width: 76px;
+    }
+
+    .footer-contact-btn {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .site-footer {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-wrapper {
+        border-width: 2px;
+    }
+
+    .site-header {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .page-content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .btn-primary,
+    .btn-teal,
+    .footer-contact-btn,
+    .nav-btn,
+    .feature-nav a {
+        font-size: 0.98rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .result-box {
+        padding: 16px;
+    }
+
+    .data-table {
+        font-size: 0.74rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 7px 8px;
+    }
+
+    .site-footer {
+        gap: 20px;
+    }
+}
