@@ -10,14 +10,12 @@
 
     <!-- INTERNAL CSS -->
     <style>
-        .chart-section {
-            margin-bottom: 40px;
-        }
-
+        /* ── Legend ── */
         .legend {
             display: flex;
-            gap: 24px;
-            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 28px;
             font-family: Arial, sans-serif;
             font-size: 0.85rem;
         }
@@ -25,27 +23,130 @@
         .legend-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .legend-dot {
             width: 14px;
             height: 14px;
             border-radius: 3px;
-            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* ── Year Cards ── */
+        .year-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .year-card {
+            border: 2px solid #c5d8e8;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .year-card-header {
+            background-color: #1a4fa3;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 1.05rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            padding: 10px 18px;
+            text-align: center;
+        }
+
+        .year-card-body {
+            padding: 18px 18px 14px;
+            background-color: #fafcff;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* ── Individual Bar Rows inside cards ── */
+        .bar-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .bar-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-family: Arial, sans-serif;
+        }
+
+        .bar-meta .bar-cat {
+            font-size: 0.82rem;
+            font-weight: bold;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bar-meta .bar-amt {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .bar-track {
+            width: 100%;
+            background-color: #e0eaf3;
+            border-radius: 4px;
+            height: 18px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 18px;
+            border-radius: 4px;
+            transition: width 0.3s ease;
         }
 
         .bar-fill-income  { background-color: #2e8fa5; }
         .bar-fill-savings { background-color: #f4a261; }
         .bar-fill-debt    { background-color: #e76f51; }
 
-        .year-label {
+        /* ── Breakdown Table ── */
+        .table-section-label {
             font-family: Arial, sans-serif;
-            font-size: 0.82rem;
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            background-color: #2e8fa5;
+            padding: 6px 14px;
+        }
+
+        .data-table tr.section-header td {
+            background-color: #e8f3f8;
             font-weight: bold;
             color: #1a4fa3;
-            width: 50px;
-            flex-shrink: 0;
+            padding-top: 12px;
+            padding-bottom: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #2e8fa5;
+        }
+
+        .data-table tr.total-row td {
+            background-color: #dceef4;
+            font-weight: bold;
+            border-top: 2px solid #2e8fa5;
+            border-bottom: 2px solid #2e8fa5;
+        }
+
+        @media (max-width: 768px) {
+            .year-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -73,13 +174,13 @@
 
         <!-- Feature sub-navigation -->
         <div class="feature-nav">
-            <a href="feature1.html" class="active">Feature 1 – Income & Savings</a>
+            <a href="feature1.html" class="active">Feature 1 – Income &amp; Savings</a>
             <a href="feature2.html">Feature 2 – Budget Calculator</a>
             <a href="feature3.html">Feature 3 – Financial News</a>
         </div>
 
-        <h2 class="section-title">Feature 1: Monthly Income, Savings & Debt Breakdown</h2>
-        <p style="font-family: Arial, sans-serif; font-size: 0.93rem; color: #444; margin-bottom: 28px;">
+        <h2 class="section-title">Feature 1: Monthly Income, Savings &amp; Debt Breakdown</h2>
+        <p style="font-family: Arial, sans-serif; font-size: 0.93rem; color: #444; margin-bottom: 28px; max-width: 680px;">
             This chart visualizes your monthly income sources, savings allocation, and debt breakdown
             across three years. Use this to track how your financial picture changes over time.
         </p>
@@ -97,78 +198,115 @@
             </div>
         </div>
 
-        <!-- CSS BAR CHART – Income Sources -->
-        <div class="chart-section">
-            <h3 style="font-family:Arial,sans-serif; font-size:1rem; margin-bottom:14px; color:#333;">Income vs. Savings vs. Debt (2020–2022)</h3>
+        <!-- YEAR CARDS — each year is its own self-contained block -->
+        <div class="year-cards">
 
             <!-- 2020 -->
-            <div class="bar-row">
-                <span class="year-label">2020</span>
-                <span class="bar-label">Income</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-income" style="width: 72%;"></div></div>
-                <span class="bar-value">$36,000</span>
+            <div class="year-card">
+                <div class="year-card-header">2020</div>
+                <div class="year-card-body">
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Income</span>
+                            <span class="bar-amt">$36,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-income" style="width: 72%;"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Savings</span>
+                            <span class="bar-amt">$24,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-savings" style="width: 48%;"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Debt</span>
+                            <span class="bar-amt">$10,500</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-debt" style="width: 21%;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bar-row">
-                <span class="year-label"></span>
-                <span class="bar-label">Savings</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-savings" style="width: 48%;"></div></div>
-                <span class="bar-value">$24,000</span>
-            </div>
-            <div class="bar-row">
-                <span class="year-label"></span>
-                <span class="bar-label">Debt</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-debt" style="width: 21%;"></div></div>
-                <span class="bar-value">$10,500</span>
-            </div>
-
-            <!-- Divider -->
-            <div style="margin: 10px 0; border-top: 1px dashed #ccc;"></div>
 
             <!-- 2021 -->
-            <div class="bar-row">
-                <span class="year-label">2021</span>
-                <span class="bar-label">Income</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-income" style="width: 80%;"></div></div>
-                <span class="bar-value">$40,000</span>
+            <div class="year-card">
+                <div class="year-card-header">2021</div>
+                <div class="year-card-body">
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Income</span>
+                            <span class="bar-amt">$40,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-income" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Savings</span>
+                            <span class="bar-amt">$27,500</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-savings" style="width: 55%;"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Debt</span>
+                            <span class="bar-amt">$9,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-debt" style="width: 18%;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bar-row">
-                <span class="year-label"></span>
-                <span class="bar-label">Savings</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-savings" style="width: 55%;"></div></div>
-                <span class="bar-value">$27,500</span>
-            </div>
-            <div class="bar-row">
-                <span class="year-label"></span>
-                <span class="bar-label">Debt</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-debt" style="width: 18%;"></div></div>
-                <span class="bar-value">$9,000</span>
-            </div>
-
-            <div style="margin: 10px 0; border-top: 1px dashed #ccc;"></div>
 
             <!-- 2022 -->
-            <div class="bar-row">
-                <span class="year-label">2022</span>
-                <span class="bar-label">Income</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-income" style="width: 90%;"></div></div>
-                <span class="bar-value">$45,000</span>
+            <div class="year-card">
+                <div class="year-card-header">2022</div>
+                <div class="year-card-body">
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Income</span>
+                            <span class="bar-amt">$45,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-income" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Savings</span>
+                            <span class="bar-amt">$31,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-savings" style="width: 62%;"></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-meta">
+                            <span class="bar-cat">Debt</span>
+                            <span class="bar-amt">$7,000</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill bar-fill-debt" style="width: 14%;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bar-row">
-                <span class="year-label"></span>
-                <span class="bar-label">Savings</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-savings" style="width: 62%;"></div></div>
-                <span class="bar-value">$31,000</span>
-            </div>
-            <div class="bar-row">
-                <span class="year-label"></span>
-                <span class="bar-label">Debt</span>
-                <div class="bar-track"><div class="bar-fill bar-fill-debt" style="width: 14%;"></div></div>
-                <span class="bar-value">$7,000</span>
-            </div>
-        </div>
 
-        <!-- DATA TABLE BELOW -->
-        <h3 style="font-family:Arial,sans-serif; font-size:1rem; margin-bottom:10px; color:#333;">Full Breakdown Table</h3>
+        </div><!-- /year-cards -->
+
+        <!-- DATA TABLE -->
+        <h3 style="font-family:Arial,sans-serif; font-size:1rem; margin-bottom:14px; color:#333;">Full Breakdown Table</h3>
         <table class="data-table">
             <thead>
                 <tr>
@@ -179,18 +317,32 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- INCOME GROUP -->
+                <tr class="section-header">
+                    <td colspan="4">💰 Income</td>
+                </tr>
                 <tr><td>Salary</td><td>$30,000</td><td>$34,000</td><td>$38,000</td></tr>
                 <tr><td>Freelance</td><td>$4,000</td><td>$4,500</td><td>$5,000</td></tr>
                 <tr><td>Other Income</td><td>$2,000</td><td>$1,500</td><td>$2,000</td></tr>
-                <tr><td><strong>Total Income</strong></td><td><strong>$36,000</strong></td><td><strong>$40,000</strong></td><td><strong>$45,000</strong></td></tr>
+                <tr class="total-row"><td><strong>Total Income</strong></td><td><strong>$36,000</strong></td><td><strong>$40,000</strong></td><td><strong>$45,000</strong></td></tr>
+
+                <!-- SAVINGS GROUP -->
+                <tr class="section-header">
+                    <td colspan="4">🐷 Savings</td>
+                </tr>
                 <tr><td>Roth IRA</td><td>$6,000</td><td>$6,500</td><td>$7,000</td></tr>
                 <tr><td>Emergency Fund</td><td>$5,000</td><td>$6,000</td><td>$7,500</td></tr>
                 <tr><td>Italy Trip Fund</td><td>$3,000</td><td>$3,500</td><td>$4,000</td></tr>
-                <tr><td><strong>Total Savings</strong></td><td><strong>$24,000</strong></td><td><strong>$27,500</strong></td><td><strong>$31,000</strong></td></tr>
+                <tr class="total-row"><td><strong>Total Savings</strong></td><td><strong>$24,000</strong></td><td><strong>$27,500</strong></td><td><strong>$31,000</strong></td></tr>
+
+                <!-- DEBT GROUP -->
+                <tr class="section-header">
+                    <td colspan="4">💳 Debt</td>
+                </tr>
                 <tr><td>Car Note</td><td>$4,800</td><td>$4,800</td><td>$4,200</td></tr>
                 <tr><td>Student Loans</td><td>$3,600</td><td>$2,400</td><td>$1,800</td></tr>
                 <tr><td>Credit Card</td><td>$2,100</td><td>$1,800</td><td>$1,000</td></tr>
-                <tr><td><strong>Total Debt</strong></td><td><strong>$10,500</strong></td><td><strong>$9,000</strong></td><td><strong>$7,000</strong></td></tr>
+                <tr class="total-row"><td><strong>Total Debt</strong></td><td><strong>$10,500</strong></td><td><strong>$9,000</strong></td><td><strong>$7,000</strong></td></tr>
             </tbody>
         </table>
 
